@@ -1,13 +1,13 @@
 # EXPERIMENT-01-INTERFACING-A-DIGITAL-OUTPUT-TO-IOT-DEVELOPMENT-BOARD
 
 
-**DATE:**
+**DATE: 30/04/2026**
 
-**NAME:**
+**NAME: AMIRTHA VARSHINI V**
 
-**ROLL NO:**
+**ROLL NO: 212224040021**
 
-**DEPARTMENT:**
+**DEPARTMENT: CSE**
 
 ## Aim
 
@@ -33,13 +33,15 @@ With its power-efficient design, built-in LoRaWAN support, and flexible communic
 
 1. Click on STM 32 CUBE IDE, the following screen will appear
    
- ![image](https://user-images.githubusercontent.com/36288975/226189166-ac10578c-c059-40e7-8b80-9f84f64bf088.png)
+ <img width="1919" height="1199" alt="Screenshot 2026-05-01 134710" src="https://github.com/user-attachments/assets/9cac74a6-e771-48d3-a269-34e62692ef28" />
+
 
 
 2. Click on FILE, click on new stm 32 project
    
-![image](https://user-images.githubusercontent.com/36288975/226189215-2d13ebfb-507f-44fc-b772-02232e97c0e3.png)
-![image](https://user-images.githubusercontent.com/36288975/226189230-bf2d90dd-9695-4aaf-b2a6-6d66454e81fc.png)
+<img width="1919" height="1199" alt="Screenshot 2026-05-01 134817" src="https://github.com/user-attachments/assets/f934e89d-319a-4340-b3c1-eaa36ef93cd6" />
+<img width="1919" height="1199" alt="Screenshot 2026-05-01 134943" src="https://github.com/user-attachments/assets/b136c196-302b-47ae-b3de-9f5316840ab1" />
+
 
 3. Select the target to be programmed as shown below and click on next
    
@@ -67,16 +69,19 @@ With its power-efficient design, built-in LoRaWAN support, and flexible communic
 
 8. Edit the program and as per required 
 
-![image](https://user-images.githubusercontent.com/36288975/226189461-a573e62f-a109-4631-a250-a20925758fe0.png)
+<img width="1919" height="1199" alt="Screenshot 2026-05-01 135129" src="https://github.com/user-attachments/assets/b5729c57-c418-479b-94c0-99f14cf9c9d5" />
+
 
 
 9. Use project and build all 
 
-![image](https://user-images.githubusercontent.com/36288975/226189554-3f7101ac-3f41-48fc-abc7-480bd6218dec.png)
+<img width="1919" height="1199" alt="Screenshot 2026-05-01 135209" src="https://github.com/user-attachments/assets/cf62f438-307b-466e-86a3-ffe7bcb82ed9" />
+
 
 10. Once the project is bulild 
 
-![image](https://user-images.githubusercontent.com/36288975/226189577-c61cc1eb-3990-4968-8aa6-aefffc766b70.png)
+<img width="730" height="247" alt="Screenshot 2026-05-01 135218" src="https://github.com/user-attachments/assets/b2a53464-69d9-4c3f-a036-5c68792ecc14" />
+
 
 11. connect the iot board to power supply and usb
 
@@ -99,10 +104,101 @@ With its power-efficient design, built-in LoRaWAN support, and flexible communic
 ## STM 32 CUBE PROGRAM
 
 ```
-// Your STM 32 CUBE Program code here
+#include "main.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+
+/* USER CODE END Includes */
+
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+
+/* USER CODE BEGIN PV */
+
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+/* USER CODE BEGIN PFP */
+
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+int main(void)
+{
+  /* USER CODE BEGIN 1 */
+
+  /* USER CODE END 1 */
+
+  /* MCU Configuration--------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
+
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
+
+  /* Configure the system clock */
+  SystemClock_Config();
+
+  /* USER CODE BEGIN SysInit */
+
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  /* USER CODE BEGIN 2 */
+
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    /* USER CODE END WHILE */
+	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET);
+	  HAL_Delay(5000);
+	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_RESET);
+	  HAL_Delay(5000);
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */
+}
 ```
 
 ## OUTPUT
+**OFF**
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-01 at 1 59 57 PM" src="https://github.com/user-attachments/assets/ab2d8762-2c81-4282-b596-8efe21ce5313" />
+
+
+**ON**
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-01 at 2 00 08 PM" src="https://github.com/user-attachments/assets/d454ea70-3508-4668-806d-7258970815db" />
+
+
 
 ## Result
 
